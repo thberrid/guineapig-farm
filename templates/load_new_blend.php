@@ -7,9 +7,11 @@
 </ol>
 
 <h2>téléversement :</h2>
-<form method="post" action="ctr/receive_zipfile.php" enctype="multipart/form-data">
+<form method="post" action="/" enctype="multipart/form-data">
 	<input name="MAX_FILE_SIZE" value="104857600" type="hidden"/>
-	<label for="zipinput">Choisir un .zip (100Mo max)</label><br>
+	<label for="outputname">Optionnel: indiquer un nom pour les images rendues</label><br>
+	<input id="outputname" type="text" name="outputname"><br><br>
+	<label for="zipinput">Choisir un .zip ou un .blend (100Mo max)</label><br>
 	<input id="file-input" type="file" name="zipinput"><br><br>
 	<input id="button-start-upload" type="submit" value="Téléverser et lancer le rendu">
 </form><br>

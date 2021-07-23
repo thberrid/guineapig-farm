@@ -1,18 +1,16 @@
 function getlog(){
     var logScreen = document.getElementById("logdisplay");
     var logRequest = new XMLHttpRequest();
-    logRequest.open('GET', 'ctr/get_log.php');
+    logRequest.open('GET', '/ctr/get_log.php');
     logRequest.send(null);
 	logRequest.addEventListener('readystatechange', function(){
         if (logRequest.readyState === XMLHttpRequest.DONE
         &&  logRequest.status == 200){
-            logScreen.innerHTML = logRequest.responseText;
-            setTimeout(function(){
-                getlog();
-            }, 500);
+            if (logRequest.responseText != "no log file"){
+                logScreen.innerHTML = logRequest.responseText;
+            } else {
+                logScreen.innerHTML = logScreen.innerHTML + "<br><br>logs: over.";
+            }
         }
     });
 }
-document.addEventListener("DOMContentLoaded", function(){
-    getlog();
-})

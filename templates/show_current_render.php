@@ -1,35 +1,13 @@
-<!DOCTYPE html>
-<html>
-	<head>
-			<meta charset="utf-8">
-			<title>rendering</title>
-			<style>
-				* {
-                    font-family: arial;
-                    color: rgb(66,66,66);
-                }
-                #logdisplay	{
-                    font-family: monospace;
-                    white-space: pre-line;
-                    padding-left: 3em;
-				    border-left: 1px solid
-                }
-                .hidden { display: none }
-			</style>	
-	</head>
-	<body>
-		<h1>rendering</h1>
-        <div id="dl-section" class="hidden">
-            <h2>download link</h2>
-            <a id="dl-link" href="" >download</a>
-        </div>
-        <h2>logs:</h2>
-        <pre id="logdisplay"></pre>
-        <h2>images:</h2>
-        <ul id="img-list"></ul>
-	</body>
-    <script src="../ctr/getlog.js"></script>
-    <script src="../ctr/getimgs.js"></script>
-</html>
-
-
+<h1>rendering</h1>
+<button type="button" id="shutdown">Stoper le rendu</button>
+<div id="dl-section" class="hidden">
+    <h2>download link</h2>
+    <a id="dl-link" href="#" >création du zip en cours...</a><br>
+    <a id="reload-info" class="hidden" href="/">
+        Retourner sur la page d'accueil et lancer un nouveau rendu.
+    </a>
+</div>
+<h2>logs:</h2>
+<pre id="logdisplay"></pre>
+<h2>images:</h2>
+<ul id="img-list"></ul>
