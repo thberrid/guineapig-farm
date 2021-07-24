@@ -11,9 +11,6 @@ function waitingAnimation(){
     var link = document.getElementById("dl-link");
     link.innerHTML = loadingText[0];
     loadingText.push(loadingText.shift());
-    timer = setTimeout(function(){
-        waitingAnimation();
-    }, 250);
 }
 
 function getDLLink(){
@@ -23,7 +20,7 @@ function getDLLink(){
     dlRequest.addEventListener('readystatechange', function(){
         if (dlRequest.readyState === XMLHttpRequest.DONE
         &&  dlRequest.status == 200){
-            clearTimeout(timer);
+            clearInterval(timer);
             timer = 0;
             var reloadInfo = document.getElementById("reload-info");
             reloadInfo.classList.remove("hidden");
@@ -44,9 +41,11 @@ function isOver(stopAll){
         &&  request.status == 200){
             var response = JSON.parse(request.responseText)
             if (response == 0){
+                var shutdownBtn = document.getElementById("shutdown");
+                shutdownBtn.parentNode.removeChild(shutdownBtn);
                 var dlSection = document.getElementById("dl-section");
                 dlSection.classList.remove("hidden");
-                waitingAnimation();
+                timer = setInterval(waitingAnimation, 250);
                 getDLLink();
                 stopAll();
             }
