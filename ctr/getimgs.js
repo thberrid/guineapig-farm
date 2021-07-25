@@ -8,7 +8,7 @@ function addElements(elements){
         var nA = document.createElement("a");
         nA.href = element.href;
         nA.target = "_blank";
-        nA.innerHTML = element.name;
+        nA.innerHTML = element.name + " (" + element.time + ")";
         var nLi = document.createElement("li");
         nLi.appendChild(nA);
         imgLi.appendChild(nLi);

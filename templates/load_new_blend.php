@@ -1,9 +1,9 @@
 <h1>renderer</h1>
 <h2>notes :</h2>
 <ol>
-	<li>Aucune contrainte sur les noms. </li>
-	<li>Selectionner un fichier .blend ou un .zip si des fichiers externes sont nécessaires.</li>
-	<li>Les paramètres d'exports (noms des images, extensions, durée de l'animation, résolution, etc) doivent être configurés dans blender avant le téléversement.</li>
+	<li>Noms de fichiers: pas de caractères spéciaux.</li>
+	<li>Selectionner un fichier .blend (pas de .blend1) ou un .zip si des fichiers externes sont nécessaires.</li>
+	<li>Les paramètres d'exports: extensions, durée de l'animation, résolution, etc... tous sauf le nom des images rendus, doivent être configurés dans blender avant le téléversement.</li>
 </ol>
 
 <h2>téléversement :</h2>

@@ -19,7 +19,8 @@ if (isset($_GET["index"]) && is_numeric($_GET["index"])){
     while ($index < $max){
         $new_line = array(
             "name" => extract_name($imgs_glob[$index]),
-            "href" => extract_url($imgs_glob[$index])
+            "href" => extract_url($imgs_glob[$index]),
+            "time" => date("H:i:s.", filectime($imgs_glob[$index]))
         );
         array_push($imgs_array, $new_line);
         $index += 1;
